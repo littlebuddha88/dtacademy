@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DT Academy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      margin: 0;
+    }
+    /* 히어로 영역 */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: url('https://source.unsplash.com/1600x900/?technology,education') no-repeat center/cover;
+      color: white;
+      text-align: center;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .keywords {
+      position: relative;
+      z-index: 2;
+      font-size: 2rem;
+      font-weight: bold;
+      animation: fadeIn 2s ease-out forwards;
+    }
+    .message {
+      opacity: 0;
+      transition: opacity 1s ease;
+      font-size: 2.5rem;
+      font-weight: 700;
+      z-index: 2;
+      position: relative;
+      margin-top: 20px;
+    }
+    .message.active {
+      opacity: 1;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 섹션 공통 */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* 소개 */
+    .intro {
+      text-align: center;
+    }
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* 교육 과정 카드 */
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-body h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    /* 문의 폼 */
+    .contact-form {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="keywords">에듀테크 · 디지털전환 · 혁신</div>
+    <div id="messages">
+      <div class="message">AX 경쟁력 확보</div>
+      <div class="message">AX 인재 양성</div>
+      <div class="message">AX 생태계 조성</div>
+    </div>
+  </section>
+
+  <!-- 소개 -->
+  <section class="intro">
+    <h2>DT Academy 소개</h2>
+    <p>
+      DT Academy는 디지털 전환 시대를 선도할 AX 전문 인재 양성을 목표로 합니다.  
+      에듀테크 기반의 혁신 교육 프로그램을 통해 경쟁력 있는 인재를 발굴하고,  
+      지속 가능한 AX 생태계 조성에 기여합니다.
+    </p>
+  </section>
+
+  <!-- 교육 과정 -->
+  <section>
+    <h2 style="text-align:center;">교육 과정</h2>
+    <div class="courses">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?digital,training" alt="과정 1">
+        <div class="card-body">
+          <h3>AX 리더십 프로그램</h3>
+          <p>경영진 및 팀 리더를 위한 전략 중심의 AX 교육 과정</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?coding,students" alt="과정 2">
+        <div class="card-body">
+          <h3>에듀테크 실무 과정</h3>
+          <p>최신 에듀테크 도구 활용 및 실습 중심의 과정</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x300/?teamwork,office" alt="과정 3">
+        <div class="card-body">
+          <h3>AX 생태계 프로젝트</h3>
+          <p>기업·기관 협업 프로젝트 기반의 실전 프로그램</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 -->
+  <section>
+    <h2 style="text-align:center;">문의하기</h2>
+    <div class="contact-form">
+      <input type="text" placeholder="이름" required>
+      <input type="email" placeholder="이메일" required>
+      <textarea rows="5" placeholder="문의 내용" required></textarea>
+      <button type="submit">문의 보내기</button>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 DT Academy. All rights reserved.
+  </footer>
+
+  <script>
+    const messages = document.querySelectorAll('.message');
+    let index = 0;
+    function showNextMessage() {
+      if (index > 0) messages[index - 1].classList.remove('active');
+      if (index < messages.length) {
+        messages[index].classList.add('active');
+        index++;
+        setTimeout(showNextMessage, 2000);
+      }
+    }
+    setTimeout(showNextMessage, 2000);
+  </script>
+</body>
+</html>
